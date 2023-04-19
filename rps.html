@@ -9,11 +9,18 @@
 <body>
     <script>
         
-    let choices = ["rock" , "paper" , "scissors"];
-        let getComputerChoice = choices[Math.floor(Math.random() * choices.length)];
-        
-        console.log(getComputerChoice);
+    const choices = ["Rock" , "Paper" , "Scissors"];
+    let computerChoice = (choices[Math.floor(Math.random() * choices.length)]).toLowerCase();
+    let playerChoice= prompt("Rock, Paper, Scissors?").toLowerCase()
+    
+    console.log(playerChoice);
        
+    function oneRound (computerChoice,playerChoice){
+
+    }
+    
+        
+        
     </script>
     
 </body>
