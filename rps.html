@@ -11,13 +11,12 @@
         
     const choices = ["Rock" , "Paper" , "Scissors"];
     let computerChoice = (choices[Math.floor(Math.random() * choices.length)]).toLowerCase();
-    let playerChoice= prompt("Rock, Paper, Scissors?").toLowerCase()
+    let playerChoice= prompt("Rock, Paper, Scissors?").toLowerCase();
     
-    console.log(playerChoice);
-       
-    function oneRound (computerChoice,playerChoice){
-
-    }
+        if (computerChoice === playerChoice) {
+           alert("It's a tie!");
+        } 
+    
     
         
         
