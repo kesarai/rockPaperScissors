@@ -15,9 +15,21 @@
     
         if (computerChoice === playerChoice) {
            alert("It's a tie!");
-        } 
+        } else if (computerChoice === "rock" && playerChoice === "paper") {
+            alert("You win!");
+        } else if (computerChoice === "rock" && playerChoice === "scissors") {
+            alert("You loser!");
+        }else if (computerChoice === "paper" && playerChoice === "rock") {
+            alert("You loser!");
+        }else if (computerChoice === "paper" && playerChoice === "scissors") {
+            alert("You win!");
+        }else if (computerChoice === "scissors" && playerChoice === "rock") {
+            alert("You win!");
+        }else if (computerChoice === "scissors" && playerChoice === "paper") {
+            alert("You loser!");
+        }   else (alert("Check your spelling!"))
     
-    
+    console.log(computerChoice)
         
         
     </script>
