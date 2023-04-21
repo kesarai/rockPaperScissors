@@ -8,12 +8,13 @@
 </head>
 <body>
     <script>
-let win = 0;
-let lose = 0;
-let draw = 0;
-const n = 5;
-for (let i = 1; i <= n; i++) {
-        const choices = ["Rock" , "Paper" , "Scissors"];
+
+    let win = 0;
+    let lose = 0;
+    let draw = 0;
+for (let i = 1; win < 3 && lose < 3; i++) {
+    const choices = ["Rock" , "Paper" , "Scissors"];
+    
     computerChoice = (choices[Math.floor(Math.random() * choices.length)]).toLowerCase();    
     playerChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
         if (computerChoice === playerChoice) {
@@ -33,11 +34,12 @@ for (let i = 1; i <= n; i++) {
         }   else result = ("Check your spelling!");
         
  alert(result)
+
 if (result === "You win!") {
     ++win
 } else if (result === "You lose!") {
     ++lose
-} else {++draw}
+} else {++draw};
 
 
 alert("Player score: " + win + "  ||  PC score: " + lose)
