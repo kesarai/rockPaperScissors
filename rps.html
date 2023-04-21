@@ -22,6 +22,12 @@ function game() {
   for (let i = 1; win < 3 && lose < 3; i++) {
     computerChoice = getComputerChoice();
     playerChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
+    if (!playerChoice){ 
+      break;
+    } 
+
+    
+     
 
     if (computerChoice === playerChoice) {
       result = "It's a tie!";
