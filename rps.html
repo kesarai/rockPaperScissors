@@ -8,28 +8,45 @@
 </head>
 <body>
     <script>
-        
-    const choices = ["Rock" , "Paper" , "Scissors"];
-    let computerChoice = (choices[Math.floor(Math.random() * choices.length)]).toLowerCase();
-    let playerChoice= prompt("Rock, Paper, Scissors?").toLowerCase();
-    
+let win = 0;
+let lose = 0;
+let draw = 0;
+const n = 5;
+for (let i = 1; i <= n; i++) {
+        const choices = ["Rock" , "Paper" , "Scissors"];
+    computerChoice = (choices[Math.floor(Math.random() * choices.length)]).toLowerCase();    
+    playerChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
         if (computerChoice === playerChoice) {
-           alert("It's a tie!");
+            result = ("It's a tie!");
         } else if (computerChoice === "rock" && playerChoice === "paper") {
-            alert("You win!");
+            result = ("You win!");
         } else if (computerChoice === "rock" && playerChoice === "scissors") {
-            alert("You loser!");
+            result = ("You lose!");
         }else if (computerChoice === "paper" && playerChoice === "rock") {
-            alert("You loser!");
+            result = ("You lose!");
         }else if (computerChoice === "paper" && playerChoice === "scissors") {
-            alert("You win!");
+            result = ("You win!");
         }else if (computerChoice === "scissors" && playerChoice === "rock") {
-            alert("You win!");
+            result = ("You win!");
         }else if (computerChoice === "scissors" && playerChoice === "paper") {
-            alert("You loser!");
-        }   else (alert("Check your spelling!"))
-    
-    console.log(computerChoice)
+            result = ("You lose!");
+        }   else result = ("Check your spelling!");
+        
+ alert(result)
+if (result === "You win!") {
+    ++win
+} else if (result === "You lose!") {
+    ++lose
+} else {++draw}
+
+
+alert("Player score: " + win + "  ||  PC score: " + lose)
+}
+
+
+
+
+
         
         
     </script>
