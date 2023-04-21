@@ -13,11 +13,16 @@ function game() {
   let win = 0;
   let lose = 0;
   let draw = 0;
-  for (let i = 1; win < 3 && lose < 3; i++) {
-    const choices = ["Rock", "Paper", "Scissors"];
 
-    computerChoice = choices[Math.floor(Math.random() * choices.length)].toLowerCase();
+  function getComputerChoice() {
+    const choices = ["Rock", "Paper", "Scissors"];
+    return choices[Math.floor(Math.random() * choices.length)].toLowerCase();
+  }
+
+  for (let i = 1; win < 3 && lose < 3; i++) {
+    computerChoice = getComputerChoice();
     playerChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
+
     if (computerChoice === playerChoice) {
       result = "It's a tie!";
     } else if (computerChoice === "rock" && playerChoice === "paper") {
