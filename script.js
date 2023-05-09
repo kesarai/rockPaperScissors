@@ -1,67 +1,59 @@
+function playGame(playerChoice){
+  let result = '';
+  let computerChoice = getComputerChoice();
+  console.log(playerChoice);
+  console.log(computerChoice);
 
+  if (computerChoice === playerChoice) {
+    result = "It's a tie!";
+  } else if (computerChoice === "rock" && playerChoice === "paper") {
+    result = "You win!";
+  } else if (computerChoice === "rock" && playerChoice === "scissors") {
+    result = "You lose!";
+  } else if (computerChoice === "paper" && playerChoice === "rock") {
+    result = "You lose!";
+  } else if (computerChoice === "paper" && playerChoice === "scissors") {
+    result = "You win!";
+  } else if (computerChoice === "scissors" && playerChoice === "rock") {
+    result = "You win!";
+  } else if (computerChoice === "scissors" && playerChoice === "paper") {
+    result = "You lose!";
+  } else {
+    result = "Check your spelling!";
+  }
 
+  alert(result);
+}
 
+function getComputerChoice() {
+  const choices = ["Rock", "Paper", "Scissors"];
+  return choices[Math.floor(Math.random() * choices.length)].toLowerCase();
   
-  
+}
 
-    let win = 0;
-    let lose = 0;
-    let draw = 0;
-  
-    function getComputerChoice() {
-      const choices = ["Rock", "Paper", "Scissors"];
-      return choices[Math.floor(Math.random() * choices.length)].toLowerCase();
-    }
 
-    function getPlayerChoice(){
-    let buttons = document.getElementsByClassName('btn');
+function getPlayerChoice(){
+  let playerChoice = '';
+  let buttons = document.getElementsByClassName('btn');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function(e) {
-      console.log(e.target.textContent);
+      playerChoice = e.target.textContent.toLowerCase();
+      playGame(playerChoice); 
+      ;
     })
-    };
-    }
+  }
+}
 
-    for (let i = 1; win < 3 && lose < 3; i++) {
-      computerChoice = getComputerChoice();
-      playerChoice = getPlayerChoice();
-      if (computerChoice === playerChoice) {
-        result = "It's a tie!";
-      } else if (computerChoice === "rock" && playerChoice === "paper") {
-        result = "You win!";
-      } else if (computerChoice === "rock" && playerChoice === "scissors") {
-        result = "You lose!";
-      } else if (computerChoice === "paper" && playerChoice === "rock") {
-        result = "You lose!";
-      } else if (computerChoice === "paper" && playerChoice === "scissors") {
-        result = "You win!";
-      } else if (computerChoice === "scissors" && playerChoice === "rock") {
-        result = "You win!";
-      } else if (computerChoice === "scissors" && playerChoice === "paper") {
-        result = "You lose!";
-      } else {
-        result = "Check your spelling!";
-      }
+
+
+getPlayerChoice();
+      
   
-      alert(result);
-  
-      if (result === "You win!") {
-        ++win;
-      } else if (result === "You lose!") {
-        ++lose;
-      } else {
-        ++draw;
-      }
+      
+
     
-  
-      alert("Player score: " + win + "  ||  PC score: " + lose);
-  
-      if (win === 3) {
-        alert("Congratulations! You defeated the PC.");
-      } else if (lose === 3) {
-        alert("Defeated! You couldn't handle the PC.");
-      }
-    }
+      
+      
   
 
      
